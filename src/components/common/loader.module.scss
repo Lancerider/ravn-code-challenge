@@ -1,0 +1,14 @@
+.loader {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: #828282;
+
+  .spinner {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+  }
+}

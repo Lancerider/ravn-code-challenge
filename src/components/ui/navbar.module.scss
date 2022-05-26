@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  background-color: #121212;
+  color: #fff;
+  
+  .title {
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    .title {
+      text-align: center;
+    }
+  }
+}
