@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className={ style.home }>
-      { (!isMobile || (isMobile && !characterSelected)) && <CharacterList /> }
+      { <CharacterList hide={(isMobile && !!characterSelected)} /> }
 
       { characterSelected && (
         <div className={style.details}>

@@ -11,11 +11,17 @@ import { getChallenges } from "../../services/characters";
 
 import CharacterType from "../../interfaces/CharacterType";
 
-const CharacterList = () => {
+type CharacterListProps = {
+  hide: boolean
+}
+
+const CharacterList = (props: CharacterListProps) => {
   const [characters, setCharacters] = useState<CharacterType[] | null>(null);
   const [errorLoading, setErrorLoading] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const { hide } = props;
+  
   const getData = async () => {
     setErrorLoading(false)
     setLoading(true)
@@ -32,7 +38,10 @@ const CharacterList = () => {
   }, []);
 
   return (
-    <div className={ characterStyle['characters-menu'] }>
+    <div
+      className={ characterStyle['characters-menu'] }
+      style={{ display: hide ? 'none' : 'flex' }}
+    >
       { errorLoading && <ErrorLoading /> }
 
       { characters && characters.length > 0 && (
