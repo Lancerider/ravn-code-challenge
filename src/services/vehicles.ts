@@ -10,8 +10,6 @@ export const getVehicles = async (vehicles: string[]): Promise<string[]> => {
 
     const vehicleNames = await Promise.all(vehiclePromises);
 
-    console.log(vehicleNames);
-
     return vehicleNames;
   } catch (error) {
     return [];
