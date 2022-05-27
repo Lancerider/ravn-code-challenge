@@ -42,8 +42,6 @@ const CharacterList = (props: CharacterListProps) => {
       className={ characterStyle['characters-menu'] }
       style={{ display: hide ? 'none' : 'flex' }}
     >
-      { errorLoading && <ErrorLoading /> }
-
       { characters && characters.length > 0 && (
         <div className={ characterStyle['characters-list'] }>
           {
@@ -58,7 +56,10 @@ const CharacterList = (props: CharacterListProps) => {
         <NoItems />
       )}
 
+      { errorLoading && <ErrorLoading /> }
+
       { loading && <Loader /> }
+
     </div>
   )
 };
